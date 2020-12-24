@@ -2,7 +2,7 @@ FROM openjdk:15.0.1-slim-buster
 
 ARG jdk_major_version=15
 ARG jdk_minor_version=0.1
-ARG jdk_patch_version=9.1
+ARG jdk_patch_version=9
 ARG jdk_version=${jdk_major_version}.${jdk_minor_version}_${jdk_patch_version}
 ARG jdk_version_encoded=${jdk_major_version}.${jdk_minor_version}%2B${jdk_patch_version}
 
