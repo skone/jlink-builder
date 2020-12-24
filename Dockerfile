@@ -26,6 +26,13 @@ RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/re
 #mac
 RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_x64}_${operating_system_mac}_hotspot_${jdk_version}.tar.gz
 
+RUN wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+RUN export PATH=$PATH:/usr/local/go/bin
+RUN go get -u github.com/linuxkit/linuxkit/src/cmd/linuxkit
+
+
+
 #windows
 #https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14.0.1%2B7.1/OpenJDK14U-jdk_x64_windows_hotspot_14.0.1_7.zip
 
