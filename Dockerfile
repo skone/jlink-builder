@@ -28,8 +28,8 @@ RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/re
 
 RUN wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
-RUN export PATH=$PATH:/usr/local/go/bin
-RUN go get -u github.com/linuxkit/linuxkit/src/cmd/linuxkit
+#RUN export PATH=$PATH:/usr/local/go/bin
+RUN /usr/local/go/bin/go get -u github.com/linuxkit/linuxkit/src/cmd/linuxkit
 
 
 
