@@ -15,7 +15,7 @@ ARG operating_system_windows=windows
 ARG operating_system_mac=mac
 
 RUN  apt-get update \
-  && apt-get install -y wget \
+  && apt-get install -y wget git\
   && rm -rf /var/lib/apt/lists/*
 
 #linux
@@ -28,8 +28,8 @@ RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/re
 
 RUN wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
-#RUN export PATH=$PATH:/usr/local/go/bin
-RUN /usr/local/go/bin/go get -u github.com/linuxkit/linuxkit/src/cmd/linuxkit
+ENV PATH="${PATH}:/usr/local/go/bin"
+RUN go get -u github.com/linuxkit/linuxkit/src/cmd/linuxkit
 
 
 
