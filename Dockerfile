@@ -51,7 +51,7 @@ RUN set -o errexit -o nounset \
     && echo "Testing Gradle installation" \
     && gradle --version
 
-RUN gradle wrapper; ./gradlew --version --gradle-distribution-url https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-all.zip
+RUN gradle wrapper; ./gradlew --gradle-distribution-url https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-all.zip
 
 ARG jdk_major_version=15
 ARG jdk_minor_version=0.1
