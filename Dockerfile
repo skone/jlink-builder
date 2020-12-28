@@ -50,6 +50,8 @@ RUN set -o errexit -o nounset \
     && echo "Testing Gradle installation" \
     && gradle --version
 
+RUN gradle wrapper
+
 ARG jdk_major_version=15
 ARG jdk_minor_version=0.1
 ARG jdk_patch_version=9
