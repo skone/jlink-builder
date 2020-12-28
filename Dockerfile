@@ -3,6 +3,7 @@ FROM openjdk:15.0.1-slim-buster
 CMD ["gradle"]
 
 ENV GRADLE_HOME /opt/gradle
+ENV GRADLE_USER_HOME /var/gradle_user_home
 
 RUN set -o errexit -o nounset \
     && echo "Adding gradle user and group" \
@@ -50,7 +51,7 @@ RUN set -o errexit -o nounset \
     && echo "Testing Gradle installation" \
     && gradle --version
 
-RUN gradle wrapper
+RUN gradle wrapper; ./gradlew --version
 
 ARG jdk_major_version=15
 ARG jdk_minor_version=0.1
