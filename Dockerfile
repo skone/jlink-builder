@@ -69,7 +69,7 @@ ARG operating_system_windows=windows
 ARG operating_system_mac=mac
 
 RUN  apt-get update \
-  && apt-get install -y wget git unzip gcc\
+  && apt-get install -y wget git unzip gcc fakeroot\
   && rm -rf /var/lib/apt/lists/*
 
 
