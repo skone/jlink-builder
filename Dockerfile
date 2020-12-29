@@ -73,12 +73,12 @@ RUN  apt-get update \
 
 
 #linux
-RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_x64}_${operating_system_linux}_hotspot_${jdk_version}.tar.gz
-RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_aarch64}_${operating_system_linux}_hotspot_${jdk_version}.tar.gz
-RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_arm}_${operating_system_linux}_hotspot_${jdk_version}.tar.gz
+RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_x64}_${operating_system_linux}_hotspot_${jdk_version}.tar.gz -O - | tar -xz /jdk/jdk_${architecture_x64}_${operating_system_linux}/
+RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_aarch64}_${operating_system_linux}_hotspot_${jdk_version}.tar.gz -O - | tar -xz /jdk/jdk_${architecture_aarch64}_${operating_system_linux}/
+RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_arm}_${operating_system_linux}_hotspot_${jdk_version}.tar.gz -O - | tar -xz /jdk/jdk_${architecture_arm}_${operating_system_linux}/
 
 #mac
-RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_x64}_${operating_system_mac}_hotspot_${jdk_version}.tar.gz
+RUN wget https://github.com/AdoptOpenJDK/openjdk${jdk_major_version}-binaries/releases/download/jdk-${jdk_version_encoded}/OpenJDK${jdk_major_version}U-jdk_${architecture_x64}_${operating_system_mac}_hotspot_${jdk_version}.tar.gz -O - | tar -xz /jdk/jdk_${architecture_x64}_${operating_system_mac}/
 
 RUN wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
